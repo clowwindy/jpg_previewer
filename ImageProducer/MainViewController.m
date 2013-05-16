@@ -36,6 +36,7 @@
         bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSJPEGFileType properties:[NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:0.01 * _percentSlider.floatValue] forKey:NSImageCompressionFactor]];
         NSImage *rightImage = [[NSImage alloc] initWithData:bitmapData];
         _rightImageView.image = rightImage;
+        [_fileSizeTextField setIntegerValue:bitmapData.length];
     }
 }
 
