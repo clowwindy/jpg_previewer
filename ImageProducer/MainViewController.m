@@ -41,6 +41,9 @@
         NSImage *rightImage = [[NSImage alloc] initWithData:bitmapData];
         _rightImageView.image = rightImage;
         [_fileSizeTextField setIntegerValue:bitmapData.length];
+    } else {
+        _rightImageView.image = nil;
+        [_fileSizeTextField setIntegerValue:0];
     }
 }
 
