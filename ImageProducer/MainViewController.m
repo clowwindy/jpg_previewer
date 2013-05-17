@@ -60,7 +60,7 @@
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDownloadsDirectory inDomains:NSUserDomainMask] lastObject];
     if (url) {
         BOOL result = [bitmapData writeToURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", url, filename]] atomically:YES];
-        if (!url) {
+        if (!result) {
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = @"保存失败";
             [alert runModal];
