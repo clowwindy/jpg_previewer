@@ -14,6 +14,7 @@
 @property (nonatomic) IBOutlet NSButton *saveButton;
 @property (nonatomic) IBOutlet NSTextField *percentTextField;
 @property (nonatomic) IBOutlet NSTextField *fileSizeTextField;
+@property (nonatomic) IBOutlet NSTextField *resolutionTextField;
 @property (nonatomic) IBOutlet NSImageView *leftImageView;
 @property (nonatomic) IBOutlet NSImageView *rightImageView;
 
