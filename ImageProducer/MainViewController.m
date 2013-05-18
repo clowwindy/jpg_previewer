@@ -8,8 +8,11 @@
 
 #import "MainViewController.h"
 
+#define CHART_SIZE 50
+
 @interface MainViewController () {
     NSData *bitmapData;
+    float chartData[2 * CHART_SIZE];
 }
 
 @end
@@ -30,14 +33,25 @@
     [super loadView];
 }
 
-- (void)load {
+- (void)renderChart {
+    for (int i = 0; i < CHART_SIZE; i++) {
+        float quality = i / (float)(CHART_SIZE - 1);
+        NSData *data = [self JPGDataWithImage:_leftImageView.image quality:quality];
+        chartData[i * 2] = quality;
+        chartData[i * 2 + 1] = data.length;
+    }
+    [_chartView renderChart:chartData numberOfPoints:CHART_SIZE];
+}
+
+- (NSData *)JPGDataWithImage:(NSImage *)image quality:(float)quality {
+    NSArray *representations;
+    representations = [image representations];
+    return [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSJPEGFileType properties:[NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:quality] forKey:NSImageCompressionFactor]];
 }
 
 - (void)updateRightImage {
     if (_leftImageView.image) {
-        NSArray *representations;
-        representations = [_leftImageView.image representations];
-        bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSJPEGFileType properties:[NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:0.01 * _percentSlider.floatValue] forKey:NSImageCompressionFactor]];
+        bitmapData = [self JPGDataWithImage:_leftImageView.image quality:0.01 * _percentSlider.floatValue];
         NSImage *rightImage = [[NSImage alloc] initWithData:bitmapData];
         _rightImageView.image = rightImage;
         [_fileSizeTextField setIntegerValue:bitmapData.length];
@@ -55,7 +69,12 @@
 - (void)imageDropped:(id)sender {
     [self sliderChanged:_percentSlider];
     NSImage *image = _leftImageView.image;
-    [_resolutionTextField setStringValue:[NSString stringWithFormat:@"%d * %d", (int)image.size.width, (int)image.size.height]];
+    NSData *customimageData = [image TIFFRepresentation];
+    NSBitmapImageRep *customimageRep = [NSBitmapImageRep imageRepWithData:customimageData];
+
+    [_resolutionTextField setStringValue:[NSString stringWithFormat:@"%d * %d", customimageRep.pixelsWide, customimageRep.pixelsHigh]];
+
+    [self renderChart];
 }
 
 - (void)openFile:(NSString *)filename {

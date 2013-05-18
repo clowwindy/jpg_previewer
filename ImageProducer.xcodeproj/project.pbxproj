@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		620975361745E72D00869A81 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 620975351745E72D00869A81 /* icon.icns */; };
+		620975471747709300869A81 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620975461747709300869A81 /* Quartz.framework */; };
 		62DD31D11744D08F00E54BD3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DD31D01744D08F00E54BD3 /* MainViewController.m */; };
 		EB18917AA345D8949BC55221 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB1897ED4818569700371467 /* InfoPlist.strings */; };
 		EB1891A067A0FE27D756C7D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB189C14BE55A627E8ABD564 /* Cocoa.framework */; };
@@ -16,8 +17,8 @@
 		EB18941D7892824E97825B1B /* ImageProducerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB189BDF65A2D2254FA20E04 /* ImageProducerTests.m */; };
 		EB18965F54C83BB8B7DBE0FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB18932207A19EF325EDF161 /* main.m */; };
 		EB18977661EB78F3ED141F40 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB189C14BE55A627E8ABD564 /* Cocoa.framework */; };
+		EB1899B0F0584BE9F7C5CE32 /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1891E16920BC068FCC2DCE /* ChartView.m */; };
 		EB189CAA9A5927B3FF739278 /* IPRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1893B39B41570665CFAAE5 /* IPRAppDelegate.m */; };
-		EB189E32CE4C8B04160C8478 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1896AB510B01A0BD11B8A9 /* QuartzCore.framework */; };
 		EB189E36DB664C300E8BCAF5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EB189CBABD29728057077164 /* Credits.rtf */; };
 		EB189EEB92C894FF94507D49 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB1894E98A71C78B801957FC /* MainMenu.xib */; };
 /* End PBXBuildFile section */
@@ -34,9 +35,11 @@
 
 /* Begin PBXFileReference section */
 		620975351745E72D00869A81 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		620975461747709300869A81 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		62DD31CF1744D08F00E54BD3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		62DD31D01744D08F00E54BD3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EB18910E096334FDDE2A035D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EB1891E16920BC068FCC2DCE /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartView.m; sourceTree = "<group>"; };
 		EB1892708CDAD91EDAF10D62 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		EB18932207A19EF325EDF161 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB1893333F81679E9C6B8347 /* ImageProducer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "ImageProducer-Info.plist"; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		EB1893D15B5BEE41FF44CC90 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EB1894796314B64C8328AF67 /* ImageProducerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageProducerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB18957114A85D25E0D45022 /* ImageProducerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageProducerTests.h; sourceTree = "<group>"; };
+		EB1895D6BAD75605BD13814A /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
 		EB18964FCEB7AEED6EAEF1B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		EB189686470CDFAFE622029B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB1896AB510B01A0BD11B8A9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -72,8 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				620975471747709300869A81 /* Quartz.framework in Frameworks */,
 				EB18977661EB78F3ED141F40 /* Cocoa.framework in Frameworks */,
-				EB189E32CE4C8B04160C8478 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +111,8 @@
 				EB1894E98A71C78B801957FC /* MainMenu.xib */,
 				62DD31CF1744D08F00E54BD3 /* MainViewController.h */,
 				62DD31D01744D08F00E54BD3 /* MainViewController.m */,
+				EB1891E16920BC068FCC2DCE /* ChartView.m */,
+				EB1895D6BAD75605BD13814A /* ChartView.h */,
 			);
 			path = ImageProducer;
 			sourceTree = "<group>";
@@ -157,6 +163,7 @@
 		EB189F4E0EB5127D519AC543 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				620975461747709300869A81 /* Quartz.framework */,
 				EB189C14BE55A627E8ABD564 /* Cocoa.framework */,
 				EB189DD13AB2B24C70979EFE /* Other Frameworks */,
 				EB1892708CDAD91EDAF10D62 /* SenTestingKit.framework */,
@@ -284,6 +291,7 @@
 				EB18965F54C83BB8B7DBE0FE /* main.m in Sources */,
 				EB189CAA9A5927B3FF739278 /* IPRAppDelegate.m in Sources */,
 				62DD31D11744D08F00E54BD3 /* MainViewController.m in Sources */,
+				EB1899B0F0584BE9F7C5CE32 /* ChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

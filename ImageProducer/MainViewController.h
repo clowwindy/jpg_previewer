@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ChartView.h"
 
 @interface MainViewController : NSViewController<NSWindowDelegate>
 
@@ -17,6 +18,7 @@
 @property (nonatomic) IBOutlet NSTextField *resolutionTextField;
 @property (nonatomic) IBOutlet NSImageView *leftImageView;
 @property (nonatomic) IBOutlet NSImageView *rightImageView;
+@property (nonatomic) IBOutlet ChartView *chartView;
 
 -(IBAction) sliderChanged:(id)sender;
 -(IBAction) setSliderValue:(id)sender;
