@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MainViewController : NSViewController
+@interface MainViewController : NSViewController<NSWindowDelegate>
 
 @property (nonatomic) IBOutlet NSSlider *percentSlider;
 @property (nonatomic) IBOutlet NSButton *saveButton;
@@ -22,5 +22,7 @@
 -(IBAction) setSliderValue:(id)sender;
 -(IBAction) imageDropped:(id)sender;
 -(IBAction) saveClicked:(id)sender;
+
+-(void)openFile:(NSString *)filename;
            
 @end

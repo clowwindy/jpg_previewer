@@ -58,6 +58,14 @@
     [_resolutionTextField setStringValue:[NSString stringWithFormat:@"%d * %d", (int)image.size.width, (int)image.size.height]];
 }
 
+- (void)openFile:(NSString *)filename {
+    NSImage *image = [[NSImage alloc] initWithContentsOfFile:filename];
+    if (image) {
+        _leftImageView.image = image;
+        [self imageDropped:self];
+    }
+}
+
 - (void)saveClicked:(id)sender {
     NSString *filename = [NSString stringWithFormat:@"%lld.jpg", (uint64_t)([[NSDate date] timeIntervalSince1970])];
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDownloadsDirectory inDomains:NSUserDomainMask] lastObject];
@@ -79,6 +87,10 @@
     NSButton *button = sender;
     [_percentSlider setStringValue:button.title];
     [self sliderChanged:_percentSlider];
+}
+
+- (void)windowWillClose:(NSNotification *)notification {
+    [[NSApplication sharedApplication] stop:self];
 }
 
 @end

@@ -16,4 +16,8 @@
 
 }
 
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)filename {
+    [_mainViewController openFile:filename];
+}
+
 @end
